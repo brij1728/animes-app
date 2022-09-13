@@ -1,6 +1,7 @@
 import * as React from "react";
 
-import { AnimeList } from "../../components/AnimeList";
+import { AnimeList, Header } from "../../components";
+
 import { AnimeResponse } from "../../api/types";
 import { getAnimeData } from "../../api/clients";
 
@@ -14,5 +15,10 @@ export const Home = () => {
       return setAnimeData(animes);
     });
   }, []);
-  return <>{<AnimeList animes={animeData?.data} />}</>;
+  return (
+    <>
+      <Header />
+      {<AnimeList animes={animeData?.data} />}
+    </>
+  );
 };
