@@ -1,23 +1,24 @@
-import * as React from "react";
+import { Box, InputBase, alpha, styled } from "@mui/material";
 
-import { alpha, styled } from "@mui/material/styles";
-
-import { InputBase } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import { useState } from "react";
 
-const SearchWrapper = styled("div")(({ theme }) => ({
+const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
   "&:hover": {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
+  marginRight: theme.spacing(2),
   marginLeft: 0,
   width: "100%",
   [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(1),
+    marginLeft: theme.spacing(3),
     width: "auto",
   },
+  // paddingTop: theme.spacing(2),
+  // paddingBottom: theme.spacing(2),
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
@@ -38,25 +39,45 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: "12ch",
-      "&:focus": {
-        width: "20ch",
-      },
+    [theme.breakpoints.up("md")]: {
+      width: "20ch",
     },
   },
 }));
 
-export const Search = () => {
+export type SearchInputProps = {
+  placeholder?: string;
+  onSubmit?: (value: string) => void;
+};
+
+export const SearchInput = ({
+  placeholder = "Search...",
+  onSubmit,
+}: SearchInputProps) => {
+  const [value, setValue] = useState("");
+  const onSearch = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (onSubmit) {
+      onSubmit(value);
+    }
+  };
+
   return (
-    <SearchWrapper>
-      <SearchIconWrapper>
-        <SearchIcon />
-      </SearchIconWrapper>
-      <StyledInputBase
-        placeholder="Search…"
-        inputProps={{ "aria-label": "search" }}
-      />
-    </SearchWrapper>
+    <form onSubmit={(e) => onSearch(e)}>
+      <Box sx={{ flexGrow: 1, pt: 2, pb: 2 }}>
+        <Search>
+          <SearchIconWrapper>
+            <SearchIcon />
+          </SearchIconWrapper>
+          <StyledInputBase
+            placeholder={placeholder}
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            inputProps={{ "aria-label": "search" }}
+            autoComplete="off"
+          />
+        </Search>
+      </Box>
+    </form>
   );
 };
