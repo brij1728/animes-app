@@ -6,7 +6,7 @@ export interface AnimeResponse {
 export interface Anime {
   mal_id: number;
   url: string;
-  images: Image;
+  images: { jpg: Image; webp: Image };
   trailer: Trailer;
   approved: boolean;
   titles: Title[];

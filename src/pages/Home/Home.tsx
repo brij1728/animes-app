@@ -8,6 +8,7 @@ export const Home = () => {
   const [animeData, setAnimeData] = React.useState<
     AnimeResponse | null | undefined
   >(null);
+  console.log(animeData);
   React.useEffect(() => {
     getAnimeData().then((animes) => {
       return setAnimeData(animes);

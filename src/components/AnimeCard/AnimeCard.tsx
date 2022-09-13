@@ -15,12 +15,23 @@ type AnimeCardProps = {
 };
 
 export const AnimeCard = ({ anime }: AnimeCardProps) => {
+  const styles = {
+    media: {
+      height: 350,
+    },
+  };
+
   return (
     <Card>
       <CardHeader title={anime.title} />
-      <CardMedia image={anime.images.image_url} />
+      <CardMedia
+        src="img"
+        image={anime.images.jpg.image_url}
+        style={styles.media}
+      />
       <CardContent>
         <Typography>{anime.rating}</Typography>
+        <Typography>{anime.duration}</Typography>
       </CardContent>
     </Card>
   );
