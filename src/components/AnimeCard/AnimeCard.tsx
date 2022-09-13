@@ -17,7 +17,7 @@ type AnimeCardProps = {
 export const AnimeCard = ({ anime }: AnimeCardProps) => {
   const styles = {
     media: {
-      height: 350,
+      height: 200,
     },
   };
 
