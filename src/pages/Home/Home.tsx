@@ -27,7 +27,7 @@ export const Home = () => {
 
   React.useEffect(() => {
     searchAnimes();
-  }, []);
+  });
   return (
     <>
       <Header />
