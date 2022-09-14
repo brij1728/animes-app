@@ -4,3 +4,4 @@ export * from "./AnimeList";
 export * from "./Search";
 export * from "./Filter";
 export * from "./Header";
+export * from "./Pagination";
