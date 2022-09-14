@@ -61,6 +61,7 @@ export const Home = () => {
   // on first load
   React.useEffect(() => {
     loadAnimes();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
