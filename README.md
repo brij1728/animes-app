@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+# Anime React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A react app build using [React](https://reactjs.org/), [MUI](https://mui.com/), and [React Router](https://reactrouter.com/).
+
+The app is live on https://animes-site.netlify.app/
+
+
+## Features
+
+    - Search through the list of Anime Cards
+
 
 ## Available Scripts
 
