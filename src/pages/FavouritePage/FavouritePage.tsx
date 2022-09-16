@@ -1,7 +1,7 @@
+import { Box, Typography } from "@mui/material";
 import { selectFavouriteAnimes, useAppSelector } from "../../store";
 
 import { AnimeList } from "../../components";
-import { Typography } from "@mui/material";
 
 export const FavouritesPage = () => {
   const favourites = useAppSelector(selectFavouriteAnimes);
@@ -11,5 +11,17 @@ export const FavouritesPage = () => {
     return <Typography variant="h4">No favourites</Typography>;
   }
 
-  return <AnimeList animes={favourites} />;
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+        overflow: "hidden",
+        mx: "5px",
+      }}
+    >
+      <AnimeList animes={favourites} />
+    </Box>
+  );
 };

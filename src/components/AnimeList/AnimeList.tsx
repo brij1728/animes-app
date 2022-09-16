@@ -1,9 +1,6 @@
-import * as React from "react";
-
 import { Box, Grid } from "@mui/material";
 
 import { Anime } from "../../api/types";
-// import { AnimeCard } from "../AnimeCard";
 import { AnimeWithActions } from "../AnimeWithActions";
 
 type AnimeListProp = {
@@ -23,7 +20,6 @@ export const AnimeList = ({ animes }: AnimeListProp) => {
         {animes?.map((anime: Anime, index) => {
           return (
             <Grid item xs={2} sm={4} md={4} key={index}>
-              {/* <AnimeCard key={anime.mal_id} anime={anime} /> */}
               <AnimeWithActions key={anime.mal_id} anime={anime} />
             </Grid>
           );

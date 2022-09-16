@@ -1,11 +1,6 @@
 import * as React from "react";
 
-import {
-  AnimeList,
-  AppBar,
-  PaginationOutlined,
-  SearchInput,
-} from "../../components";
+import { AnimeList, PaginationOutlined, SearchInput } from "../../components";
 
 import { AnimeResponse } from "../../api/types";
 import { Box } from "@mui/material";
@@ -66,7 +61,6 @@ export const Home = () => {
 
   return (
     <>
-      <AppBar />
       <Box display="flex" width="100%">
         <SearchInput
           placeholder="Search for Animes ..."
