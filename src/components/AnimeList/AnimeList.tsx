@@ -3,7 +3,7 @@ import * as React from "react";
 import { Box, Grid } from "@mui/material";
 
 import { Anime } from "../../api/types";
-import { AnimeCard } from "../AnimeCard";
+// import { AnimeCard } from "../AnimeCard";
 import { AnimeWithActions } from "../AnimeWithActions";
 
 type AnimeListProp = {
