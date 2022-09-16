@@ -10,6 +10,13 @@ The app is live on https://animes-site.netlify.app/
     - Search through the list of Anime Cards
 
 
+
+### 
+npm install react-router-dom@6
+npm install @mui/material @emotion/react @emotion/styled
+npm i redux-persist
+npm install react-redux
+npm install @reduxjs/toolkit
 ## Available Scripts
 
 In the project directory, you can run:
@@ -52,3 +59,5 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+

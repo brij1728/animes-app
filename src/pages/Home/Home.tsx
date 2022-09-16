@@ -2,7 +2,7 @@ import * as React from "react";
 
 import {
   AnimeList,
-  Header,
+  AppBar,
   PaginationOutlined,
   SearchInput,
 } from "../../components";
@@ -66,7 +66,7 @@ export const Home = () => {
 
   return (
     <>
-      <Header />
+      <AppBar />
       <Box display="flex" width="100%">
         <SearchInput
           placeholder="Search for Animes ..."
